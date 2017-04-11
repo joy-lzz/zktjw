@@ -1,0 +1,282 @@
+@charset "utf-8";
+/* 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "Microsoft Yahei";}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; }
+img {border:0;	vertical-align:middle;}
+table { border-collapse:collapse; }
+body {
+    font:12px/22px "Microsoft YaHei",Arial,Verdana,"\5b8b\4f53";
+    color:#555;
+    background:#F1F1F1;
+}
+.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+.clearfloat{*zoom:1}
+a{color:#555; text-decoration:none; }
+a:hover{color:#638199;}
+h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #555!important;}
+
+/*公共类*/
+.w{
+    width: 1200px;
+    margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+
+/* common 相同部分*/
+
+/* header start */
+.header .login {
+    line-height: 32px;
+}
+.header .login>ul>li {
+    float: left;
+    width: 74px;
+    height: 32px;
+    padding: 0 8px;
+    text-align: right;
+    position: relative;
+    cursor: pointer;
+}
+.header .login>ul>li:nth-of-type(5) ul {
+    width: 90px;
+    border: 1px solid #D9D9D9;
+    position: relative;
+    background-color: #F4F4F4;
+}
+.header .login>ul>li:nth-of-type(5) li {
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+}
+.header .login>ul>li:nth-of-type(5) li a:hover {
+    /* 显示下划线 */
+    text-decoration: underline;
+    color: #34B5F2;
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box {
+    width: 250px;
+    border: 1px solid #D9D9D9;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    background-color: #F4F4F4;
+    text-align: left;
+    display: none;
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box .top {
+    height: 60px;
+    padding: 0 10px;
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box .bottom {
+    height: 85px;
+    padding: 0 10px;
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box .bottom dt {
+    border-top: 1px dashed #DCDCDC;
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box dt {
+    height: 40px;
+    line-height: 40px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: text;
+
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box .top dd {
+    float: left;
+    width: 76px;
+    line-height: 12px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box .bottom dd {
+    float: left;
+    width: 76px;
+    line-height: 12px;
+    padding-bottom: 8px;
+}
+.header .login>ul>li:nth-of-type(6) .wrap-box a:hover {
+    /* 显示下划线 */
+    text-decoration: underline;
+    color: #34B5F2;
+}
+.header .login li i {
+    width: 15px;
+    height: 14px;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    margin-top: -7px;
+    background: url("../img/jl.png") no-repeat;
+}
+.header .login li:nth-of-type(1) i {
+    left: 18px;
+}
+.header .search {
+    background-color: #fff;
+}
+.header .search .w {
+    position: relative;
+    padding: 15px 0 25px 0;
+}
+.header .search .logo {
+    float: left;
+    cursor: pointer;
+}
+.header .logo .img-logo-left {
+    opacity: 0;
+    animation: rotate360 1s .5s both;
+}
+@keyframes rotate360 {
+    0% {
+        opacity: 0;
+        transform : rotateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform : rotateY(360deg);
+    }
+}
+.header .logo .img-logo-right {
+    opacity: 0;
+    margin-left: 14px;
+    /* both 是animation-fill-mode的参数，指停留在动画结束后的状态 */
+    animation : translate50 1s 1s both;
+}
+@keyframes translate50 {
+    0% {
+        opacity: 0;
+        /* 静态写好后，指定离开的距离，回到原来的距离有多少，不需要设置定位 */
+        transform : translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform : translateX(0);
+    }
+}
+.header .search .address {
+    float: left;
+    width: 100px;
+    height: 36px;
+    margin: 22px 30px 0 26px;
+    text-align: center;
+    line-height: 36px;
+    border: 1px solid #DEDEDE;
+    font-size: 14px;
+    cursor: pointer;
+}
+.header .search .address span {
+    font-weight: bold;
+}
+.header .search .search-box {
+    float: left;
+    width: 394px;
+    height: 60px;
+}
+.header .search .search-box .top span {
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border: 1px solid #CCC;
+    border-bottom: 0;
+    cursor: pointer;
+}
+.header .search .search-box .top span.current {
+    background-color: #34B5F2;
+    color: #fff;
+}
+.header .search .search-box .bottom .txt {
+    /* input之间的缝隙用浮动来清除 */
+    float: left;
+    width: 312px;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 8px;
+    border: 1px solid #34B5F2;
+    font-size: 14px;
+}
+.header .search .search-box .bottom .btn {
+    float: left;
+    width: 72px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background-color: #34B5F2;
+    color: #fff;
+    cursor: pointer;
+}
+.header .search .search-box .bottom {
+    position: relative;
+    overflow: hidden;
+}
+.header .search .search-box .bottom label {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+    font-size: 14px;
+    color: #767676;
+    cursor: text;
+}
+.header .call {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+/* header end */
+
+/* navigation start */
+.nav {
+    background-color: #34B5F2;
+    box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+.nav .w .nav-left {
+    float: left;
+}
+.nav .w .nav-left li {
+    float: left;
+    width: 125px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #34B5F2;
+}
+.nav .w  a {
+    display: block;
+    height: 50px;
+    color: #fff;
+    font-size: 16px;
+}
+.nav .w  a:hover {
+    background-color: #1EA2E2;
+}
+.nav .w .nav-right {
+    float: right;
+    margin-top: 6px;
+    width: 123px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #60CCFF;
+    border-radius: 5px;
+}
+.nav .w .nav-right a {
+    height: 35px;
+    border-radius: 5px;
+}
+.nav .w .nav-left li.current {
+    background-color: #1EA2E2;
+}
+/* navigation end */
